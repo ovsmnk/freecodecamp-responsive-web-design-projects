@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form Project</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <div class="survey">
+          <div class="heading">
+            <h1 class="title" id="title">Developer Survey Form</h1>
+            <p class="description" id="description">
+              Tell us about your experience as a software developer.
+            </p>
+          </div>
+          <form action="#" method="post" id="survey-form" class="form">
+            <fieldset class="form__block">
+              <legend class="form__block-legend">Personal information</legend>
+              <ul class="form__list">
+                <li class="form__list-item">
+                  <label for="name" class="form__label" id="name-label"
+                    >Name</label
+                  ><input
+                    id="name"
+                    name="name"
+                    type="text"
+                    class="form__input"
+                    placeholder="Your name..."
+                    required
+                  />
+                </li>
+                <li class="form__list-item">
+                  <label for="email" class="form__label" id="email-label"
+                    >Email</label
+                  ><input
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="form__input"
+                    placeholder="Your email..."
+                    required
+                  />
+                </li>
+                <li class="form__list-item">
+                  <label for="number" class="form__label" id="number-label"
+                    >Age</label
+                  ><input
+                    type="number"
+                    id="number"
+                    min="16"
+                    max="120"
+                    name="number"
+                    required
+                    placeholder="Your age..."
+                    class="form__input"
+                  />
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="form__block">
+              <legend class="form__block-legend">Work experience</legend>
+              <ul class="form__list">
+                <li class="form__list-item">
+                  <p class="form__test">Are you currently employed?</p>
+                  <label for="not-employed" class="switcher">
+                    <input
+                      id="not-employed"
+                      type="radio"
+                      name="is-employed"
+                      value="no"
+                      class="switcher__input"
+                    />
+                    <span class="switcher__handle"></span>
+                    <span class="switcher__text">No</span>
+                  </label>
+                  <label for="employed" class="switcher">
+                    <input
+                      id="employed"
+                      type="radio"
+                      name="is-employed"
+                      value="yes"
+                      class="switcher__input"
+                      checked
+                    />
+                    <span class="switcher__handle"></span>
+                    <span class="switcher__text">Yes</span>
+                  </label>
+                </li>
+                <li class="form__list-item">
+                  <label for="dropdown" class="form__label"
+                    >What is your current position?</label
+                  >
+                  <select name="dropdown" id="dropdown" class="form__select">
+                    <option value="unemployed">unemployed</option>
+                    <option value="junior">Junior Developer</option>
+                    <option value="middle">Middle Developer</option>
+                    <option value="senior">Senior Developer</option>
+                  </select>
+                </li>
+                <li class="form__list-item">
+                  <label for="experience" class="form__label"
+                    >How many years of experience do you have?</label
+                  >
+                  <select
+                    name="experience"
+                    id="experience"
+                    class="form__select"
+                  >
+                    <option value="0">no experience</option>
+                    <option value="1-5">1-5 years</option>
+                    <option value="5-10">5-10 years</option>
+                    <option value="10+">10+ years</option>
+                  </select>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="form__block">
+              <legend class="form__block-legend">Technologies</legend>
+              <ul class="form__list">
+                <li class="form__list-item">
+                  <p class="form__text">
+                    What programming languages do you use?
+                  </p>
+                  <ul class="options-list">
+                    <li class="options-list__item">
+                      <label for="javascript-checkbox" class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="javascript-checkbox"
+                          name="javascript-checkbox"
+                          value="javascript"
+                          class="checkbox__input"
+                        />
+                        <span class="checkbox__handle"></span>
+                        <span class="checkbox__text">JavaScript</span>
+                      </label>
+                    </li>
+                    <li class="options-list__item">
+                      <label for="typescript-checkbox" class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="typescript-checkbox"
+                          name="typescript-checkbox"
+                          value="typescript"
+                          class="checkbox__input"
+                        />
+                        <span class="checkbox__handle"></span>
+                        <span class="checkbox__text">TypeScript</span>
+                      </label>
+                    </li>
+                    <li class="options-list__item">
+                      <label for="python-checkbox" class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="python-checkbox"
+                          name="python-checkbox"
+                          value="python"
+                          class="checkbox__input"
+                        />
+                        <span class="checkbox__handle"></span>
+                        <span class="checkbox__text">Python</span>
+                      </label>
+                    </li>
+                    <li class="options-list__item">
+                      <label for="php-checkbox" class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="php-checkbox"
+                          name="php-checkbox"
+                          value="php"
+                          class="checkbox__input"
+                        />
+                        <span class="checkbox__handle"></span>
+                        <span class="checkbox__text">PHP</span>
+                      </label>
+                    </li>
+                    <li class="options-list__item">
+                      <label for="other-lang-checkbox" class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="other-lang-checkbox"
+                          name="other-lang-checkbox"
+                          value="other"
+                          class="checkbox__input"
+                        />
+                        <span class="checkbox__handle"></span>
+                        <span class="checkbox__text">other</span>
+                      </label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="form__list-item">
+                  <p class="form__text">What editor do you use?</p>
+                  <ul class="options-list">
+                    <li class="options-list__item">
+                      <label for="code-checkbox" class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="code-checkbox"
+                          name="code-checkbox"
+                          value="code"
+                          class="checkbox__input"
+                        />
+                        <span class="checkbox__handle"></span>
+                        <span class="checkbox__text">Visual Studio Code</span>
+                      </label>
+                    </li>
+                    <li class="options-list__item">
+                      <label for="jetbrains-checkbox" class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="jetbrains-checkbox"
+                          name="jetbrains-checkbox"
+                          value="jetbrains"
+                          class="checkbox__input"
+                        />
+                        <span class="checkbox__handle"></span>
+                        <span class="checkbox__text">JetBrains IDE</span>
+                      </label>
+                    </li>
+                    <li class="options-list__item">
+                      <label for="vim-checkbox" class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="vim-checkbox"
+                          name="vim-checkbox"
+                          value="vim"
+                          class="checkbox__input"
+                        />
+                        <span class="checkbox__handle"></span>
+                        <span class="checkbox__text">vim, neovim</span>
+                      </label>
+                    </li>
+                    <li class="options-list__item">
+                      <label for="other-editor-checkbox" class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="other-editor-checkbox"
+                          name="other-editor-checkbox"
+                          value="other"
+                          class="checkbox__input"
+                        />
+                        <span class="checkbox__handle"></span>
+                        <span class="checkbox__text">other</span>
+                      </label>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="form__block">
+              <legend class="form__block-legend">Comments</legend>
+              <label for="comment" class="form__label"
+                >Write your thoughts and comments:</label
+              >
+              <textarea
+                id="comment"
+                name="comment"
+                rows="5"
+                cols="30"
+                placeholder="Your comment..."
+              ></textarea>
+            </fieldset>
+            <button class="form__button" id="submit" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
