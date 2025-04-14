@@ -5,7 +5,7 @@ Course: [freeCodeCamp - Responsive Web Design](https://www.freecodecamp.org/lear
 ## Projects
 
 1. [Survey Form](https://github.com/ovsmnk/freecodecamp-responsive-web-design-projects/tree/main/survey-form)
-2. Tribute Page
+2. [Tribute Page](https://github.com/ovsmnk/freecodecamp-responsive-web-design-projects/tree/main/tribute-page)
 3. Technical Documentation Page
 4. Product Landing Page
 5. Personal Portfolio Webpage
