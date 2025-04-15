@@ -109,14 +109,9 @@ img {
   text-align: center;
 }
 
-#image {
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto 5px;
-}
-
 .article__portrait {
   width: 250px;
+  margin: 0 auto 5px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   padding: 5px;
@@ -394,7 +389,7 @@ img {
     font-size: 16px;
   }
 
-.sources-list__link::before {
+  .sources-list__link::before {
     font-size: 100px;
   }
 }
