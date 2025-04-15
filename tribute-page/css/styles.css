@@ -112,14 +112,13 @@ img {
 #image {
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 5px;
 }
 
-#image.article__portrait {
+.article__portrait {
   width: 250px;
-  height: 250px;
+  aspect-ratio: 1/1;
   border-radius: 50%;
-  margin-bottom: 5px;
   padding: 5px;
   background-image: linear-gradient(to bottom right, var(--mauve), var(--blue));
 }
