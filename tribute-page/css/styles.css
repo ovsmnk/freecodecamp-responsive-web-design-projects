@@ -1,6 +1,15 @@
 :root {
   --base: #1e1e2e;
   --text: #cdd6f4;
+  --crust: #11111b;
+  --black: #000000;
+  --lavender: #b4befe;
+  --subtext0: #a6adc8;
+  --rosewater: #f5e0dc;
+  --surface0: #313244;
+  --mauve: #cba6f7;
+  --blue: #89b4fa;
+  --teal: #94e2d5;
 }
 
 html {
@@ -18,9 +27,375 @@ body {
   min-height: 100%;
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
   font-size: 16px;
-  line-height: 1.2;
-  background-color: var(--base);
+  background-color: var(--black);
+  background-image: linear-gradient(
+    to right,
+    var(--crust),
+    var(--base),
+    var(--crust)
+  );
   color: var(--text);
   font-weight: 400;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container {
+  max-width: 1012px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.article {
+  padding: 50px 0;
+}
+
+.article__heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 36px;
+  color: var(--lavender);
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 14px;
+  margin: 0;
+}
+
+.section + .section {
+  margin-top: 50px;
+}
+
+.section__title {
+  margin: 0 0 40px;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  padding: 15px 0 10px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--surface0),
+    transparent
+  );
+}
+
+.article__figure {
+  margin: 0 40px 20px 0;
+  float: left;
+  text-align: center;
+}
+
+#image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#image.article__portrait {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-image: linear-gradient(to bottom right, var(--mauve), var(--blue));
+}
+
+.article__figcaption {
+  font-style: italic;
+  color: var(--subtext0);
+  font-size: 14px;
+}
+
+.source-link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.source-link a {
+  color: var(--rosewater);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+  transform: scale(1.1) translateY(-3px);
+}
+
+.article__text {
+  margin: 0;
+}
+
+.article__text + .article__text {
+  margin-top: 15px;
+}
+
+.timeline {
+  padding: 0;
+  margin: 0 auto 70px;
+  list-style-type: none;
+  max-width: 650px;
+  position: relative;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  transform: translateX(-50%);
+  background-color: var(--lavender);
+  z-index: -1;
+}
+
+.timeline__item {
+  display: flex;
+  align-items: center;
+  gap: 0 50px;
+}
+
+.timeline__item + .timeline__item {
+  margin-top: 70px;
+}
+
+.timeline__item-year {
+  font-weight: 700;
+  width: 100px;
+  height: 100px;
+  background-color: var(--base);
+  border: 3px solid var(--lavender);
+  color: var(--lavender);
+  border-radius: 50%;
+  flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.timeline__item-title {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--teal);
+}
+
+.timeline__text {
+  margin: 0;
+}
+
+.quote {
+  margin: 0 auto 70px;
+  max-width: 650px;
+  padding: 50px 70px;
+  text-align: right;
+  position: relative;
+}
+
+.quote__text {
+  font-style: italic;
+  color: var(--subtext0);
+  margin: 0 0 30px;
+  text-align: left;
+  font-size: 22px;
+}
+
+.quote::before,
+.quote::after {
+  font-size: 70px;
+  color: var(--lavender);
+  font-style: normal;
+  font-weight: 700;
+  position: absolute;
+  line-height: 0;
+}
+
+.quote::before {
+  content: open-quote;
+  top: 50px;
+  left: 20px;
+}
+
+.quote::after {
+  content: close-quote;
+  bottom: 20px;
+  right: 20px;
+}
+
+.quote__cite {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sources-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+  counter-reset: counter;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sources-list__item {
+  counter-increment: counter;
+  width: calc(100% / 3 - 20px);
+  flex-shrink: 0;
+}
+
+.sources-list__link {
+  text-decoration: none;
+  color: var(--lavender);
+  font-size: 18px;
+  font-weight: 700;
+  display: inline-block;
+  padding: 50px 20px 50px 50px;
+  border: 5px solid #a6adc822;
+  border-radius: 10px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.sources-list__link::before {
+  content: counter(counter);
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 150px;
+  font-weight: 900;
+  color: #a6adc822;
+  transition: all 0.2s ease;
+}
+
+.sources-list__link:hover {
+  border-color: #a6adc855;
+}
+
+.sources-list__link:hover::before {
+  color: #a6adc855;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sources-list__item {
+    width: calc(50% - 15px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .section__title {
+    font-size: 18px;
+  }
+
+  .article__figure {
+    float: none;
+    margin: 0 0 20px;
+  }
+
+  .article__text {
+    text-align: center;
+  }
+
+  .timeline::after {
+    display: none;
+  }
+
+  .timeline__item {
+    flex-direction: column;
+    gap: 20px 0;
+  }
+
+  .timeline__item-info {
+    text-align: center;
+  }
+
+  .timeline__item-title {
+    margin: 0;
+  }
+
+  .quote {
+    padding: 30px;
+  }
+
+  .quote::before,
+  .quote::after {
+    font-size: 50px;
+  }
+
+  .quote::before {
+    top: 20px;
+    left: 0;
+  }
+
+  .quote::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  .quote__text {
+    font-size: 14px;
+  }
+
+  .sources-list {
+    flex-direction: column;
+  }
+
+  .sources-list__item {
+    width: 100%;
+  }
+
+  .sources-list__link {
+    padding: 30px 20px 30px 40px;
+    font-size: 16px;
+  }
+
+.sources-list__link::before {
+    font-size: 100px;
+  }
 }

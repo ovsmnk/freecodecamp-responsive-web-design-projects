@@ -10,38 +10,44 @@
 </head>
 
 <body>
-  <main class="main">
+  <main class="main" id="main">
     <div class="container">
       <article class="article">
         <div class="article__heading">
-          <h1 class="title">Isaac Newton</h1>
+          <h1 id="title" class="title">Isaac Newton</h1>
           <p class="subtitle">English mathematician, physicist, astronomer, alchemist, theologian and author</p>
         </div>
-        <figure class="article__figure">
-          <img src="images/isaac-newton.jpg" width="702" height="547" alt="Portrait of Newton"
-            class="article__protrait">
-          <figcaption class="article__figcaption">Sir Isaac Newton<sup class="source-link"><a
-                href="#wikipedia-source">[2]</a></sup></figcaption>
-        </figure>
-        <p class="article__text">
-          Isaac Newton was an English physicist and mathematician who was the culminating figure of the Scientific
-          Revolution of the
-          17th century. In optics, his discovery of the composition of white light integrated the phenomena of colours
-          into the science of light and laid the foundation for modern physical optics. In mechanics, his three laws
-          of
-          motion, the basic principles of modern physics, resulted in the formulation of the law of universal
-          gravitation. In mathematics, he was the original discoverer of the infinitesimal calculus. Newton’s
-          Philosophiae Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy, 1687) was one
-          of
-          the most important single works in the history of modern science.<sup class="source-link"><a
-              href="#britannica-source">[1]</a></sup>
-        </p>
-        <section class="section">
+        <section class="section clearfix">
+          <h2 class="section__title">Information about Isaac Newton<sup class="source-link"><a
+                href="#britannica-source">[1]</a></h2>
+          <figure id="img-div" class="article__figure">
+            <img id="image" src="images/isaac-newton.jpg" width="702" height="547" alt="Portrait of Newton"
+              class="article__portrait">
+            <figcaption id="img-caption" class="article__figcaption">Sir Isaac Newton<sup class="source-link"><a
+                  href="#wikipedia-source">[2]</a></sup></figcaption>
+          </figure>
+          <p class="article__text">
+            Isaac Newton was an English physicist and mathematician who was the culminating figure of the Scientific
+            Revolution of the 17th century.</p>
+          <p class="article__text">In optics, his discovery of the composition of white light integrated the phenomena
+            of
+            colours into the science of light and laid the foundation for modern physical optics.</p>
+          <p class="article__text">In mechanics, his three laws of
+            motion, the basic principles of modern physics, resulted in the formulation of the law of universal
+            gravitation.</p>
+          <p class="article__text">In mathematics, he was the original discoverer of the infinitesimal calculus.
+            Newton’s
+            Philosophiae Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy, 1687) was one
+            of
+            the most important single works in the history of modern science.</sup>
+          </p>
+        </section>
+        <section class="section" id="tribute-info">
           <h2 class="section__title">Time line of Isaac Newton's life<sup class="source-link"><a
                 href="#timeline-source">[3]</a></sup></h2>
           <ol class="timeline">
             <li class="timeline__item">
-              <b class="timeline__item-year">04/01/1643</b>
+              <b class="timeline__item-year">1643</b>
               <div class="timeline__item-info">
                 <h3 class="timeline__item-title">Birth</h3>
                 <p class="timeline__text">Isaac Newton was born in Woolsthorpe, Lincolnshire, England.</p>
@@ -108,19 +114,19 @@
           <h2 class="section__title">Sources</h2>
           <ol class="sources-list">
             <li class="sources-list__item" id="britannica-source">
-              <a id="tribute-link" href="https://www.britannica.com/biography/Isaac-Newton" target="_blank"
+              <a title="Britannica - Isaac Newton" id="tribute-link"
+                href="https://www.britannica.com/biography/Isaac-Newton" target="_blank"
                 class="sources-list__link">Britannica - Isaac Newton</a>
             </li>
             <li class="sources-list__item" id="wikipedia-source">
-              <a href="https://en.wikipedia.org/wiki/Isaac_Newton" target="_blank" class="sources-list__link">Wikipedia
+              <a title="Wikipedia - Isaac Newton" href="https://en.wikipedia.org/wiki/Isaac_Newton" target="_blank"
+                class="sources-list__link">Wikipedia
                 - Isaac Newton</a>
             </li>
             <li class="sources-list__item" id="timeline-source">
-              <a href="https://historytimelines.co/timeline/isaac-newton-" target="_blank"
+              <a title="History Timelines - A History Timeline About Isaac Newton"
+                href="https://historytimelines.co/timeline/isaac-newton-" target="_blank"
                 class="sources-list__link">History Timelines - A History Timeline About Isaac Newton</a>
-            </li>
-            <li class="sources-list__item" id="ai-source">
-              <a href="https://chatgpt.com/" target="_blank" class="sources-list__link">ChatGPT - image generation</a>
             </li>
           </ol>
         </section>
