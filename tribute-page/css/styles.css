@@ -1,67 +1,26 @@
 :root {
-    --base: #1e1e2e;
-    --text: #cdd6f4;
+  --base: #1e1e2e;
+  --text: #cdd6f4;
 }
 
 html {
-    box-sizing: border-box;
-    height: 100%;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    height: 100%;
-    margin: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
-    line-height: 1.2;
-    background-color: var(--base);
-    color: var(--text);
-    font-weight: 400;
-}
-
-h1,
-h2,
-h3,
-p {
-    margin: 0;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-a {
-    display: inline-block;
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.main {
-    flex: 1;
-}
-
-.container {
-    max-width: 1220px;
-    padding: 0 10px;
-    margin: 0 auto;
+  min-height: 100%;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  background-color: var(--base);
+  color: var(--text);
+  font-weight: 400;
 }
