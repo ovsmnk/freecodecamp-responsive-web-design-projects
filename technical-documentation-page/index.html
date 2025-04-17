@@ -4,15 +4,349 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Pug documentation page">
   <title>Technical Documentation Page Project</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <div class="wrapper">
-    <nav class="nav"></nav>
-    <main class="main"></main>
+    <nav class="nav" id="navbar">
+      <header class="nav__header">Pug Documentation</header>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#Introduction" class="nav-link">Introduction</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Tags" class="nav-link">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Attributes" class="nav-link">Attributes</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Case" class="nav-link">Case</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Code" class="nav-link">Code</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Comments" class="nav-link">Comments</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Conditionals" class="nav-link">Conditionals</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Iteration" class="nav-link">Iteration</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Mixins" class="nav-link">Mixins</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Reference" class="nav-link">Reference</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="main" id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header class="main-section__header">Introduction</header>
+        <div class="main-section__content">
+          <p class="main-section__text">Pug is a language that compiles to HTML. It has a cleaner syntax with additional
+            features like if statements and loops. It can also be used as a server-side templating language for server
+            languages like Node.js.</p>
+          <h2 class="main-section__title">Installation</h2>
+          <p class="main-section__text">Pug is available via <a href="https://www.npmjs.com/" target="_blank"
+              class="link">npm</a>:</p>
+          <div class="code-block">
+            <pre><code><span class="dim-text">$</span> <span class="command">npm</span> <span class="subcommand">install</span> pug</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="main-section" id="Tags">
+        <header class="main-section__header">Tags</header>
+        <div class="main-section__content">
+          <p class="main-section__text">By default, text at the start of a line (or after only white space) represents
+            an HTML tag. Indented tags are nested, creating the tree structure of HTML.</p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="tag-name">ul</span>
+  <span class="tag-name">li</span> Item A
+  <span class="tag-name">li</span> Item B
+  <span class="tag-name">li</span> Item C</code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">ul</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>Item A<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>Item B<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>Item C<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="tag-name">ul</span>&gt;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section" id="Attributes">
+        <header class="main-section__header">Attributes</header>
+        <div class="main-section__content">
+          <p class="main-section__text">Tag attributes look similar to HTML (with optional commas), but their values are
+            just regular JavaScript.</p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="tag-name">input</span><span class="dim-text">(</span>
+  <span class="attribute">type=</span><span class="attribute-value">"checkbox"</span>
+  <span class="attribute">name=</span><span class="attribute-value">"agreement"</span>
+  <span class="attribute">checked</span>
+<span class="dim-text">)</span></code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">input</span></span> <span class="attribute">type=</span><span class="attribute-value">"checkbox"</span> <span class="attribute">name=</span><span class="attribute-value">"agreement"</span> <span class="attribute">checked</span> <span class="tag">/&gt;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section" id="Case">
+        <header class="main-section__header">Case</header>
+        <div class="main-section__content">
+          <p class="main-section__text">The <code class="text-code">case</code> statement is a shorthand for
+            JavaScript’s <code class="text-code">switch</code> statement. It takes the following form:</p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="dim-text">-</span> <span class="keyword keyword--no-italic">var</span> friends <span class="operator">=</span> <span class="datatype-num">10</span>
+<span class="keyword">case</span> friends
+  <span class="keyword">when</span> <span class="datatype-num">0</span>
+    <span class="tag-name">p</span> you have no friends
+  <span class="keyword">when</span> <span class="datatype-num">1</span>
+    <span class="tag-name">p</span> you have a friend
+  <span class="keyword">default</span>
+    <span class="tag-name">p</span> you have <span class="dim-text">#{</span>friends<span class="dim-text">}</span> friends</code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">p</span>&gt;</span>you have 10 friends<span class="tag">&lt;/<span class="tag-name">p</span>&gt;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section" id="Code">
+        <header class="main-section__header">Code</header>
+        <div class="main-section__content">
+          <p class="main-section__text">Pug allows you to write inline JavaScript code in your templates. There are
+            three types of code:</p>
+          <ul class="main-section__list">
+            <li class="main-section__list-item">
+              <a class="main-section__list-link" href="#Unbuffered_Code">Unbuffered</a>;
+            </li>
+            <li class="main-section__list-item">
+              <a class="main-section__list-link" href="#Buffered_Code">Buffered</a>;
+            </li>
+            <li class="main-section__list-item">
+              <a class="main-section__list-link" href="#Unescaped_Buffered_Code">Unescaped Buffered</a>.
+            </li>
+          </ul>
+          <h2 class="main-section__title" id="Unbuffered_Code">Unbuffered Code</h2>
+          <p class="main-section__text">Unbuffered code starts with <code class="text-code">-</code>. It does not
+            directly add anything to the output.
+          </p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="dim-text">-</span> <span class="keyword">for</span> <span class="dim-text">(</span><span class="keyword">var</span> x <span class="operator">=</span> <span class="datatype-num">0</span>; x <span class="operator">&lt;</span> <span class="datatype-num">3</span>; x<span class="operator">++</span><span class="dim-text">)</span>
+  <span class="tag-name">li</span> item</code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>item<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+<span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>item<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+<span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>item<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span></code></pre>
+            </div>
+          </div>
+          <h2 class="main-section__title" id="Buffered_Code">Buffered Code</h2>
+          <p class="main-section__text">Buffered code starts with <code class="text-code">=</code>. It evaluates the
+            JavaScript expression and outputs
+            the result. For security, buffered code is first HTML escaped.</p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="tag-name">p</span>
+  <span class="operator">=</span> <span class="datatype-str">"This code is &lt;escaped&gt;!"</span></code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">p</span>&gt;</span>This code is &amp;lt;escaped&amp;gt;!<span class="tag">&lt;/<span class="tag-name">p</span>&gt;</span></code></pre>
+            </div>
+          </div>
+          <h2 class="main-section__title" id="Unescaped_Buffered_Code">Unescaped Buffered Code</h2>
+          <p class="main-section__text">Unescaped buffered code starts with <code class="text-code">!=</code>. It
+            evaluates the JavaScript expression
+            and outputs the result. Unescaped buffered code does not perform any escaping, so is unsafe for user input:
+          </p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="tag-name">p</span>
+  <span class="operator">!=</span> <span class="datatype-str">"This code is This code is &lt;strong&gt;not&lt;/strong&gt; escaped!"</span></code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">p</span>&gt;</span>This code is <span class="tag">&lt;<span class="tag-name">strong</span>&gt;</span>not<span class="tag">&lt;/<span class="tag-name">strong</span>&gt;</span> escaped!<span class="tag">&lt;/<span class="tag-name">p</span>&gt;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section" id="Comments">
+        <header class="main-section__header">Comments</header>
+        <div class="main-section__content">
+          <p class="main-section__text">Buffered comments look the same as single-line JavaScript comments. They act
+            sort of like markup tags, producing HTML comments in the rendered page.</p>
+          <p class="main-section__text">Like tags, buffered comments must appear on their own line.</p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="dim-text">// just some paragraphs</span>
+<span class="tag-name">p</span> foo
+<span class="tag-name">p</span> bar</code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="dim-text">&lt;!-- just some paragraphs--&gt;</span>
+<span class="tag">&lt;<span class="tag-name">p</span>&gt;</span>foo<span class="tag">&lt;/<span class="tag-name">p</span>&gt;</span>
+<span class="tag">&lt;<span class="tag-name">p</span>&gt;</span>bar<span class="tag">&lt;/<span class="tag-name">p</span>&gt;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section" id="Conditionals">
+        <header class="main-section__header">Conditionals</header>
+        <div class="main-section__content">
+          <p class="main-section__text">Pug’s first-class conditional syntax allows for optional parentheses.</p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="dim-text">-</span> <span class="keyword keyword--no-italic">var</span> user <span class="dim-text">{</span><span class="obj-value">description</span><span class="dim-text">:</span> <span class="datatype-str">"foo bar baz"</span><span class="dim-text">}</span>
+<span class="dim-text">-</span> <span class="keyword keyword--no-italic">var</span> authorised <span class="operator">=</span> <span class="datatype-bool">false</span>
+<span class="tag-name">#user</span>
+  <span class="keyword">if</span> user<span class="dim-text">.</span><span class="obj-value">description</span>
+    <span class="tag-name">h2</span><span class="class-atr">.green</span> Description
+    <span class="tag-name">p</span><span class="class-atr">.description</span><span class="operator">=</span> user<span class="dim-text">.</span><span class="obj-value">description</span>
+  <span class="keyword">else if</span> authorised
+    <span class="tag-name">h2</span><span class="class-atr">.blue</span> Description
+    <span class="tag-name">p</span><span class="class-atr">.description</span><span class="dim-text">.</span>
+      User has no description,
+      why not add one...
+  <span class="keyword">else</span>
+    <span class="tag-name">h2</span><span class="class-atr">.red</span> Description
+    <span class="tag-name">p</span><span class="class-atr">.description</span> User has no description</code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">div</span></span> <span class="attribute">id=</span><span class="attribute-value">"user"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">h2</span></span> <span class="attribute">class=</span><span class="attribute-value">"green"</span><span class="tag">&gt;</span>Description<span class="tag">&lt;/<span class="tag-name">h2</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">p</span></span> <span class="attribute">class=</span><span class="attribute-value">"description"</span><span class="tag">&gt;</span>foo bar baz<span class="tag">&lt;/<span class="tag-name">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="tag-name">div</span>&gt;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section" id="Iteration">
+        <header class="main-section__header">Iteration</header>
+        <div class="main-section__content">
+          <p class="main-section__text">Pug supports two primary methods of iteration: <code
+              class="text-code">each</code> and <code class="text-code">while</code>.</p>
+          <h2 class="main-section__title">each</h2>
+          <p class="main-section__text">Pug’s first-class iteration syntax makes it easier to iterate over arrays and
+            objects in a template:</p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="tag-name">ul</span>
+  <span class="keyword">each</span> val <span class="keyword">in</span> <span class="dim-text">[</span><span class="datatype-num">1</span><span class="dim-text">,</span> <span class="datatype-num">2</span><span class="dim-text">,</span> <span class="datatype-num">3</span><span class="dim-text">,</span> <span class="datatype-num">4</span><span class="dim-text">,</span> <span class="datatype-num">5</span><span class="dim-text">]</span>
+    <span class="tag-name">li</span><span class="operator">=</span> val</code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">ul</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>5<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="tag-name">ul</span>&gt;</span></code></pre>
+            </div>
+          </div>
+          <h2 class="main-section__title">while</h2>
+          <p class="main-section__text">You can also use <code class="text-code">while</code> to create a loop:</p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="dim-text">-</span> <span class="keyword keyword--no-italic">var</span> n <span class="operator">=</span> <span class="datatype-num">0</span><span class="dim-text">;</span>
+<span class="tab-name">ul</span>
+  <span class="keyword">while</span> n <span class="operator">&lt;</span> <span class="datatype-num">4</span>
+    <span class="tag-name">li</span><span class="operator">=</span> n<span class="operator">++</span></code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">ul</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>0<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="tag-name">ul</span>&gt;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section" id="Mixins">
+        <header class="main-section__header">Mixins</header>
+        <div class="main-section__content">
+          <p class="main-section__text">Mixins allow you to create reusable blocks of Pug.</p>
+          <div class="code-wrapper">
+            <div class="code-block">
+              <b class="code-block__lang">pug</b>
+              <pre><code><span class="dim-text">//- Declaration</span>
+<span class="keyword">mixin</span> <span class="mixin-name">list</span>
+  <span class="tag-name">ul</span>
+    <span class="tag-name">li</span> foo
+    <span class="tag-name">li</span> bar
+    <span class="tag-name">li</span> baz
+<span class="dim-text">//- Use</span>
+<span class="dim-text">+</span><span class="mixin-name">list</span>
+<span class="dim-text">+</span><span class="mixin-name">list</span></code></pre>
+            </div>
+            <div class="code-block">
+              <b class="code-block__lang">html</b>
+              <pre><code><span class="tag">&lt;<span class="tag-name">ul</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>foo<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>bar<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>baz<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="tag-name">ul</span>&gt;</span>
+<span class="tag">&lt;<span class="tag-name">ul</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>foo<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>bar<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="tag-name">li</span>&gt;</span>baz<span class="tag">&lt;/<span class="tag-name">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="tag-name">ul</span>&gt;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section" id="Reference">
+        <header class="main-section__header">Reference</header>
+        <div class="main-section__content">
+          <ol class="reference-list">
+            <li class="reference-list__item">
+              <a class="reference-list__link" href="https://pugjs.org/api/getting-started.html" target="_blank">Pug
+                Documentation</a>
+            </li>
+            <li class="reference-list__item">
+              <a class="reference-list__link" href="https://learnxinyminutes.com/pug/" target="_blank">Learn X in Y
+                minutes. Where X=Pug</a>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
   </div>
 </body>
 
