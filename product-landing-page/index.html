@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Amazon Kindle shop landing page">
   <title>Product Landing Page project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -19,6 +23,12 @@
             <img class="logo__img" id="header-img" src="images/logo.png" width="183" height="43" alt="Kindle Shop logo">
           </a>
           <nav class="nav" id="nav-bar">
+            <button class="nav-button" type="button">
+              <span class="nav-button__line"></span>
+              <span class="nav-button__line"></span>
+              <span class="nav-button__line"></span>
+              <span class="nav-button__line"></span>
+            </button>
             <ul class="menu">
               <li class="menu__item">
                 <a class="nav-link" href="#About_Kindle">About</a>
@@ -38,6 +48,7 @@
             </ul>
           </nav>
           <a class="tel" href="tel:+12017018930">+1 2017018930</a>
+          <a class="button header__button" href="#Pricing">Buy Now</a>
         </div>
       </div>
     </header>
@@ -49,18 +60,18 @@
             <img class="about__img" src="images/about-img.png" width="425" height="425"
               alt="Amazon Kindle front and back view">
             <div class="about__info">
-              <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem ipsum, euismod
-                sit amet fringilla et, porta vitae nunc. Proin leo mauris, tincidunt in imperdiet at, fringilla nec
-                nisi. Pellentesque sagittis, odio vitae imperdiet sollicitudin, lacus urna consequat dolor, eu
-                consectetur mauris nisi eu velit. </p>
-              <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem ipsum, euismod
-                sit amet fringilla et, porta vitae nunc. Proin leo mauris, tincidunt in imperdiet at, fringilla nec
-                nisi. Pellentesque sagittis, odio vitae imperdiet sollicitudin, lacus urna consequat dolor, eu
-                consectetur mauris nisi eu velit. </p>
-              <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem ipsum, euismod
-                sit amet fringilla et, porta vitae nunc. Proin leo mauris, tincidunt in imperdiet at, fringilla nec
-                nisi. Pellentesque sagittis, odio vitae imperdiet sollicitudin, lacus urna consequat dolor, eu
-                consectetur mauris nisi eu velit. </p>
+              <p class="about__text">Amazon Kindle is a series of e-readers designed and marketed by Amazon. Amazon
+                Kindle devices enable users to browse, buy, download, and read e-books, newspapers, magazines, Audible
+                audiobooks, and other digital media via wireless networking to the Kindle Store. The hardware
+                platform, which Amazon subsidiary Lab126 developed, began as a single device in 2007.</p>
+              <p class="about__text">Currently, it comprises a range of devices, including e-readers with E Ink
+                electronic paper displays and Kindle applications on all major computing platforms. All Kindle devices
+                integrate with Windows and macOS file systems and Kindle Store content and, as of March 2018, the store
+                had over six million e-books available in the United States.</p>
+              <p class="about__text">In 2004, Amazon founder and CEO Jeff Bezos instructed the company's employees to
+                build the world's best electronic reader before Amazon's competitors could. Amazon originally used the
+                codename Fiona for the device.</p>
+              <a class="button about__button" href="#Pricing">Buy Now</a>
             </div>
           </div>
         </section>
@@ -80,9 +91,10 @@
         </section>
         <section class="section review" id="Review">
           <h2 class="section__title">Review</h2>
-          <div class="reveiw__box">
-            <iframe id="video" width="1200" height="500" src="https://www.youtube.com/embed/RYRLxVfijpI?si=ylOd-ZErbGGFtoWi"
-              title="YouTube video player" frameborder="0"
+          <div class="review__box">
+            <iframe id="video" width="1200" height="500"
+              src="https://www.youtube.com/embed/RYRLxVfijpI?si=ylOd-ZErbGGFtoWi" title="YouTube video player"
+              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
@@ -109,6 +121,7 @@
                 </ul>
               </div>
               <b class="pricing__price">82.49</b>
+              <button class="button pricing__button" type="button">Buy Now</button>
             </li>
             <li class="pricing__item">
               <div class="pricing__img-box">
@@ -129,6 +142,7 @@
                 </ul>
               </div>
               <b class="pricing__price">140.79</b>
+              <button class="button pricing__button" type="button">Buy Now</button>
             </li>
             <li class="pricing__item">
               <div class="pricing__img-box">
@@ -149,16 +163,17 @@
                 </ul>
               </div>
               <b class="pricing__price">399.99</b>
+              <button class="button pricing__button" type="button">Buy Now</button>
             </li>
           </ul>
         </section>
         <section class="section contact" id="Contact_Us">
           <h2 class="section__title">Contact Us</h2>
           <form class="contact__form form" id="form" action="https://www.freecodecamp.com/email-submit" method="post">
-            <p class="form__text">Leave your email and we’ll get back to you.</p>
+            <p class="form__text">Leave your email and we'll get back to you.</p>
             <label class="visually-hidden" for="email">Email:</label>
             <input class="form__input" type="email" id="email" name="email" placeholder="Your email..." required>
-            <input class="form__button" type="submit" id="submit" value="Submit">
+            <input class="form__button button" type="submit" id="submit" value="Submit">
           </form>
         </section>
       </div>
